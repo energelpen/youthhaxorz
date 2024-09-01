@@ -12,12 +12,10 @@
 Types of Food: Information on the types of food available for donation
 Quantity: The amount of each food type available for donation.
 Expiration Dates: Tracking the perishability of food items to prioritize those that need to be distributed quickly.
-  
 2. Operational Data
 Daily Production and Waste Reports: Data on the amount of food produced daily and the amount that goes unsold or wasted.
 Peak Hours of Operation: Understanding when food surplus is likely to occur.
-
-4. Beneficiary Profiles
+3. Beneficiary Profiles
 Dietary Needs: Information on the dietary restrictions and preferences of beneficiaries.</h4>
 
 <h3>How do we plan to solve food insecurity and food waste at the same time?</h3>
