@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Aid Organisation - Item Manager</title>
+    <style>
+        /* CSS for the Dark Theme and Enhanced Flexbox Layout */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ffcc00;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            background-color: #2e2e2e;
+            color: #ffffff;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #ffcc00;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+            color: #1e1e1e;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .item {
+            background-color: #2e2e2e;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .item strong {
+            color: #ffcc00;
+        }
+
+        .logout-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #d9534f;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 30px; /* Align text vertically */
+        }
+
+        .logout-button:hover {
+            background-color: #c9302c;
+            transform: scale(1.1);
+        }
+
+        .mission {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #ffffff;
+            padding: 10px;
+            background-color: #1e1e1e;
+            border-top: 1px solid #333;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .item {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logout Button -->
+    <button class="logout-button" onclick="logout()">Logout</button>
+
+    <div class="container">
+        <h1>Food Aid Organisation - Item Manager</h1>
+
+        <!-- Form to input new items -->
+        <div class="form-group">
+            <label for="itemtype">Item Type</label>
+            <select id="itemtype">
+                <option value="Rice">Rice</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Flour">Flour</option>
+                <option value="Instant Noodles">Instant Noodles</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Condiments">Condiments</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="prodNam">Product Name</label>
+            <input type="text" id="prodNam" placeholder="Enter product name">
+        </div>
+        <div class="form-group">
+            <label for="location">District Location</label>
+            <select id="location">
+                <!-- District options -->
+                <option value="01">District 01: Raffles Place, Cecil, Marina, People's Park</option>
+                <option value="02">District 02: Anson, Tanjong Pagar</option>
+                <option value="03">District 03: Queenstown, Tiong Bahru</option>
+                <option value="04">District 04: Telok Blangah, Harbourfront</option>
+                <option value="05">District 05: Pasir Panjang, Hong Leong Garden, Clementi New Town</option>
+                <option value="06">District 06: High Street, Beach Road (part)</option>
+                <option value="07">District 07: Middle Road, Golden Mile</option>
+                <option value="08">District 08: Little India</option>
+                <option value="09">District 09: Orchard, Cairnhill, River Valley</option>
+                <option value="10">District 10: Ardmore, Bukit Timah, Holland Road, Tanglin</option>
+                <option value="11">District 11: Watten Estate, Novena, Thomson</option>
+                <option value="12">District 12: Balestier, Toa Payoh, Serangoon</option>
+                <option value="13">District 13: Macpherson, Braddell</option>
+                <option value="14">District 14: Geylang, Eunos</option>
+                <option value="15">District 15: Katong, Joo Chiat, Amber Road</option>
+                <option value="16">District 16: Bedok, Upper East Coast, Eastwood, Kew Drive</option>
+                <option value="17">District 17: Loyang, Changi</option>
+                <option value="18">District 18: Tampines, Pasir Ris</option>
+                <option value="19">District 19: Serangoon Garden, Hougang, Punggol</option>
+                <option value="20">District 20: Bishan, Ang Mo Kio</option>
+                <option value="21">District 21: Upper Bukit Timah, Clementi Park, Ulu Pandan</option>
+                <option value="22">District 22: Jurong</option>
+                <option value="23">District 23: Hillview, Dairy Farm, Bukit Panjang, Choa Chu Kang</option>
+                <option value="24">District 24: Lim Chu Kang, Tengah</option>
+                <option value="25">District 25: Kranji, Woodgrove</option>
+                <option value="26">District 26: Upper Thomson, Springleaf</option>
+                <option value="27">District 27: Yishun, Sembawang</option>
+                <option value="28">District 28: Seletar</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="expiryDate">Expiry Date</label>
+            <input type="date" id="expiryDate">
+        </div>
+        <button onclick="addItem()">Add Item</button>
+
+        <!-- Display list of items -->
+        <div class="item-list" id="itemList">
+            <!-- Items will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Mission Statement -->
+    <div class="mission">
+        Our mission is to change Singapore's food wastage and reduce it to ensure Singapore is more food secure.
+    </div>
+
+    <!-- JavaScript to manage items -->
+    <script>
+        // Initial data stored in a JavaScript object
+        let data = {
+            "list": [
+                {
+                    "itemid": "1",
+                    "itemtype": "Rice",
+                    "prodNam": "Thai Rice 5kg",
+                    "location": "01",
+                    "expiryDate": "2024-10-15"
+                },
+                {
+                    "itemid": "2",
+                    "itemtype": "Rice",
+                    "prodNam": "Basmati Rice 10kg",
+                    "location": "02",
+                    "expiryDate": "2024-11-01"
+                },
+                {
+                    "itemid": "3",
+                    "itemtype": "Beans",
+                    "prodNam": "Black Beans 500g",
+                    "location": "03",
+                    "expiryDate": "2024-09-20"
+                }
+            ]
+        };
+
+        // Function to render items on the page
+        function renderItems() {
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = ''; // Clear existing items
+            data.list.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'item';
+                itemDiv.innerHTML = `
+                    <strong>Type:</strong> ${item.itemtype}<br>
+                    <strong>Name:</strong> ${item.prodNam}<br>
+                    <strong>Location:</strong> District ${item.location}<br>
+                    <strong>Expiry Date:</strong> ${item.expiryDate}
+                `;
+                itemList.appendChild(itemDiv);
+            });
+        }
+
+        // Function to add a new item
+        function addItem() {
+            const itemtype = document.getElementById('itemtype').value;
+            const prodNam = document.getElementById('prodNam').value;
+            const location = document.getElementById('location').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+
+            if (prodNam === '' || location === '' || expiryDate === '') {
+                alert('Please enter all fields');
+                return;
+            }
+
+            // Create a new item object
+            const newItem = {
+                "itemid": (data.list.length + 1).toString(),
+                "itemtype": itemtype,
+                "prodNam": prodNam,
+                "location": location,
+                "expiryDate": expiryDate
+            };
+
+            // Add the new item to the data list
+            data.list.push(newItem);
+
+            // Clear the input fields
+            document.getElementById('prodNam').value = '';
+            document.getElementById('expiryDate').value = '';
+
+            // Re-render the list of items to display the new item
+            renderItems();
+        }
+
+        // Function to handle logout and redirect to login page
+        function logout() {
+            window.location.href = 'login.html'; // Redirect to login.html
+        }
+
+        // Initial render of items when the page loads
+        renderItems();
+    </script>
+</body>
+
+</html>

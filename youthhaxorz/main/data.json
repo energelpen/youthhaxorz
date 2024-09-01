@@ -4,25 +4,29 @@
       "itemid": "1",
       "itemtype": "Rice",
       "prodNam": "Thai Rice 5kg",
-      "location": "1"
+      "location": "1",
+      "expiry": "2024-12-31"
     },
     {
       "itemid": "2",
       "itemtype": "Rice",
       "prodNam": "Basmati Rice 10kg",
-      "location": "2"
+      "location": "2",
+      "expiry": "2024-11-30"
     },
     {
       "itemid": "3",
       "itemtype": "Beans",
       "prodNam": "Black Beans 500g",
-      "location": "3"
+      "location": "3",
+      "expiry": "2024-10-15"
     },
     {
       "itemid": "4",
       "itemtype": "Fruits",
       "prodNam": "Apple 1kg",
-      "location": "2"
+      "location": "2",
+      "expiry": "2024-09-30"
     }
   ]
 }

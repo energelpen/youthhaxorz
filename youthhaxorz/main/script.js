@@ -71,12 +71,12 @@ function queryItemsByType(type) {
 console.log("Count of Rice items:", countItemsByCategory("Rice"));
 console.log("Items at location 1:", findItemsByLocation("1"));
 
-addItem({
+/*addItem({
     "itemid": "4",
     "itemtype": "Fruits",
     "prodNam": "Apple 1kg",
     "location": "2"
-});
+});*/
 
 console.log("Updated Data:", readData());
 console.log("Fruits available:", queryItemsByType("Fruits"));
