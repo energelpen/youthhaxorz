@@ -52,8 +52,15 @@
             font-size: 1rem;
         }
 
-        button {
-            width: 100%;
+        .role-buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .role-buttons button {
+            flex: 1;
+            margin: 0 0.5rem;
             padding: 0.8rem;
             border: none;
             border-radius: 5px;
@@ -64,19 +71,8 @@
             transition: background-color 0.3s ease;
         }
 
-        button:hover {
+        .role-buttons button:hover {
             background-color: #777;
-        }
-
-        .role-buttons {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .role-buttons button {
-            flex: 1;
-            margin: 0 0.5rem;
         }
     </style>
 </head>
@@ -89,8 +85,6 @@
         <label for="password">Password:</label>
         <input type="password" id="password" placeholder="Enter your password">
         
-        <button onclick="login()">Login</button>
-        
         <div class="role-buttons">
             <button onclick="setRole('provider')">Login as Food-Aid Provider</button>
             <button onclick="setRole('recipient')">Login as Recipient</button>
@@ -98,12 +92,6 @@
     </div>
 
     <script>
-        function login() {
-            alert("You are logged in!");
-            // Redirect to a general dashboard or main page if needed
-            window.location.href = 'dashboard.html'; // Change this URL to your general dashboard page
-        }
-
         function setRole(role) {
             // You can set the URLs for your specific pages here
             let url = '';
