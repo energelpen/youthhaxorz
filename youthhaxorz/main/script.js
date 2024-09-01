@@ -27,17 +27,7 @@ function countItemsByCategory(category) {
     const data = readData();
     if (!data) return 0;
 
-    let count = 0;
-    data.list.forEach(container => {
-        Object.values(container).forEach(items => {
-            items.forEach(item => {
-                if (item.itemtype === category) {
-                    count++;
-                }
-            });
-        });
-    });
-    return count;
+    return data.list.filter(item => item.itemtype === category).length;
 }
 
 // Function to find items by location
@@ -45,21 +35,11 @@ function findItemsByLocation(location) {
     const data = readData();
     if (!data) return [];
 
-    let results = [];
-    data.list.forEach(container => {
-        Object.values(container).forEach(items => {
-            items.forEach(item => {
-                if (item.location === location) {
-                    results.push(item);
-                }
-            });
-        });
-    });
-    return results;
+    return data.list.filter(item => item.location === location);
 }
 
 // Function to add a new item
-function addItem(key, item) {
+function addItem(item) {
     if (!allowedCategories.includes(item.itemtype)) {
         console.error("Invalid item category");
         return;
@@ -68,19 +48,7 @@ function addItem(key, item) {
     const data = readData();
     if (!data) return;
 
-    let found = false;
-    data.list.forEach(container => {
-        if (container[key]) {
-            container[key].push(item);
-            found = true;
-        }
-    });
-
-    if (!found) {
-        let newItem = {};
-        newItem[key] = [item];
-        data.list.push(newItem);
-    }
+    data.list.push(item);
 
     // Save the updated data
     fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf8');
@@ -96,30 +64,19 @@ function queryItemsByType(type) {
     const data = readData();
     if (!data) return [];
 
-    let results = [];
-    data.list.forEach(container => {
-        Object.values(container).forEach(items => {
-            items.forEach(item => {
-                if (item.itemtype === type) {
-                    results.push(item);
-                }
-            });
-        });
-    });
-    return results;
+    return data.list.filter(item => item.itemtype === type);
 }
 
 // Example usage
 console.log("Count of Rice items:", countItemsByCategory("Rice"));
 console.log("Items at location 1:", findItemsByLocation("1"));
 
-/*addItem("item2", {
-    "itemid": "2",
+addItem({
+    "itemid": "4",
     "itemtype": "Fruits",
     "prodNam": "Apple 1kg",
     "location": "2"
-});*/
+});
 
 console.log("Updated Data:", readData());
-
 console.log("Fruits available:", queryItemsByType("Fruits"));
