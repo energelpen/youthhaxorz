@@ -9,7 +9,7 @@
         color: #ffcc00;
         font-size: 35px;
         font-family: sans-serif;
-        padding-left: 540px;
+        padding-left: 530px;
     }
     body {
         background-color: #121212;
@@ -28,7 +28,7 @@
         color: #e0e0e0;
         font-size: 15px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding-left: 580px;
+        padding-left: 410px;
     }
     #title {
         font-weight: bold;
@@ -37,7 +37,9 @@
         font-size: 15px;
     }
     select {
-        width: 200px;
+        width: 720px;
+        font-size: 15px;
+        padding: 5px;
     }
     #submit_button {
         font-size: 20px;
@@ -51,12 +53,12 @@
 </style>
 </head>
 <body>
-<div>
+    
 <h2 class="banner">Recipient Registration Form</h2>
 
 <form method="post" class="form">
     <label for="name" id="title">Name:</label><br>
-    <textarea id="name" name="name" class="question" rows="1" cols="50"></textarea><br>
+    <textarea id="name" name="name" class="question" rows="1" cols="95"></textarea><br>
     
     <label for="age" id="title">Age:</label><br>
     <select id="age" class="question" name="age" required>
@@ -88,7 +90,7 @@
         <label for="others">Others</label><br>
 
     <label for="other_restrictions">If others, please specify:</label><br>
-    <textarea id="other_restrictions" name="other_restrictions" class="question" rows="4" cols="50"></textarea><br>
+    <textarea id="other_restrictions" name="other_restrictions" class="question" rows="4" cols="95"></textarea><br>
 
     
     <label for="allergies" id="title">Allergies:</label><br>
@@ -123,7 +125,7 @@
         <label for="gluten">Gluten</label><br>
     
     <label for="other_allergy">If others, please specify:</label><br>
-    <textarea id="other_allergy" name="other_allergy" class="question" rows="4" cols="50"></textarea><br>
+    <textarea id="other_allergy" name="other_allergy" class="question" rows="4" cols="95"></textarea><br>
 
     <label for="delivery_time" id="title">Delivery Time Preference:</label><br>
     <select id="delivery_time" class="question" name="delivery_time" required>
@@ -134,6 +136,6 @@
 
     <input type="button" value="Submit" id="submit_button">
 </form>
-</div>
+
 </body>
 </html>
