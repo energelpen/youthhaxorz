@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "item1": [
+        {
+          "itemid": "1",
+          "itemtype": "Rice",
+          "prodNam": "Thai Rice 5kg",
+          "location": "1"
+        }
+      ]
+    },
+    {
+      "item2": [
+        {
+          "itemid": "2",
+          "itemtype": "Rice",
+          "prodNam": "Basmati Rice 10kg",
+          "location": "2"
+        }
+      ]
+    },
+    {
+      "item3": [
+        {
+          "itemid": "3",
+          "itemtype": "Beans",
+          "prodNam": "Black Beans 500g",
+          "location": "3"
+        }
+      ]
+    }
+  ]
+}

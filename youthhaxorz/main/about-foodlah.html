@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodlah - About Us</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 1vh 1vw;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu-button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: none;
+            padding: 1vh 2vw;
+            font-size: 2vh;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        .menu-button:hover {
+            background-color: #555;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            width: 20vw;
+            z-index: 1001;
+        }
+
+        .dropdown-menu a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 1vh 2vw;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        .container {
+            padding: 15vh 5vw 5vh;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            text-align: center;
+            font-size: 4vw;
+        }
+
+        .content {
+            margin-top: 2vh;
+        }
+
+        h2 {
+            font-size: 3vw;
+        }
+
+        p {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vh;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 2vh 0;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+        }
+
+        footer h2 {
+            margin: 0 0 1vh;
+            font-size: 3vw;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 2.5vw;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .menu-button {
+                font-size: 1.5vh;
+            }
+
+            .dropdown-menu {
+                width: 15vw;
+            }
+
+            h1 {
+                font-size: 2.5vw;
+            }
+
+            h2 {
+                font-size: 2vw;
+            }
+
+            p {
+                font-size: 1.8vw;
+            }
+
+            footer h2 {
+                font-size: 2.2vw;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 10vh 3vw 3vh;
+            }
+
+            .menu-button {
+                font-size: 1.2vh;
+                padding: 0.8vh 1.5vw;
+            }
+
+            h1 {
+                font-size: 2vw;
+            }
+
+            h2 {
+                font-size: 1.8vw;
+            }
+
+            p {
+                font-size: 1.5vw;
+            }
+
+            footer h2 {
+                font-size: 2vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="mainpage.html">Home</a>
+                <a href="survey.html">Survey</a>
+                <a href="about-foodlah.html">About Us</a>
+                <a href="global-statistics.html">Statistics</a>
+                <a href="volunteer.html">Get Involved</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>About Foodlah</h1>
+        <div class="content">
+            <h2>Our Mission</h2>
+            <p>Foodlah was created during the YouthxHack hackathon with a mission to tackle food insecurity through innovative solutions. We aim to connect food sources with those in need while minimizing waste, using a blend of technology, data analytics, and community engagement.</p>
+
+            <h2>What We Do</h2>
+            <p>Our platform integrates various components to effectively address food insecurity. We gather and analyze data to map areas of need, catalog available food sources, and build a network of volunteers and logistics providers. By optimizing the food supply chain, we ensure that resources are distributed efficiently and responsively.</p>
+
+            <h2>How It Works</h2>
+            <p>Foodlah leverages an AI-driven algorithm to match food donations with recipients based on urgency, location, and dietary needs. We use real-time tracking to manage logistics and adjust dynamically to changing conditions. Our platform includes a mobile app for volunteer sign-ups and educational campaigns to raise awareness about food waste and donations.</p>
+
+            <h2>Our Impact</h2>
+            <p>We expect to provide reliable food access to vulnerable communities, reduce food waste significantly, and foster a culture of community support and sustainability. By designing a scalable and adaptable solution, we aim to make a long-term impact on food security.</p>
+
+            <h2>Implementation Plan</h2>
+            <p>Our approach involves three phases: starting with a pilot program, expanding and optimizing our operations, and eventually rolling out our platform nationwide. We will collaborate with government services and NGOs to ensure a comprehensive response, especially during crises.</p>
+        </div>
+    </div>
+    <footer>
+        <h2>Get Involved</h2>
+        <p>Join us in our mission to combat food insecurity. Learn more about our initiatives, volunteer, or make a donation. Together, we can make a difference.</p>
+        <p class="credit">This project was created by YouthxHack 2024.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById('dropdown-menu').classList.toggle('show-menu');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

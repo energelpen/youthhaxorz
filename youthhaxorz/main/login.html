@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodlah - Login</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to right, #1f1f1f, #333);
+        }
+
+        .login-container {
+            background-color: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #333;
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        .role-buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .role-buttons button {
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        
+        <button onclick="login()">Login</button>
+        
+        <div class="role-buttons">
+            <button onclick="setRole('provider')">Login as Food-Aid Provider</button>
+            <button onclick="setRole('recipient')">Login as Recipient</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            alert("You are logged in!");
+            // Redirect to a general dashboard or main page if needed
+            window.location.href = 'dashboard.html'; // Change this URL to your general dashboard page
+        }
+
+        function setRole(role) {
+            // You can set the URLs for your specific pages here
+            let url = '';
+            if (role === 'provider') {
+                url = 'food-aid-provider.html'; // Replace with your actual Food-Aid Provider page URL
+            } else if (role === 'recipient') {
+                url = 'recipient.html'; // Replace with your actual Recipient page URL
+            }
+            // Redirect to the selected role's page
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

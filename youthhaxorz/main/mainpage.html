@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodlah - Combating Food Insecurity</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 1vh 1vw;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu-button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: none;
+            padding: 1vh 2vw;
+            font-size: 2vh;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        .menu-button:hover {
+            background-color: #555;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            width: 20vw;
+            z-index: 1001;
+        }
+
+        .dropdown-menu a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 1vh 2vw;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        .container {
+            padding: 15vh 5vw 5vh;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            text-align: center;
+            font-size: 4vw;
+        }
+
+        .content {
+            margin-top: 2vh;
+        }
+
+        h2 {
+            font-size: 3vw;
+        }
+
+        p {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vh;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            margin: 4vh 0;
+        }
+
+        .timeline-phase {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1vh 2vw;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            max-height: 6vh;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .timeline-phase.active {
+            max-height: 20vh;
+            padding: 2vh 2vw;
+        }
+
+        .timeline-phase h3 {
+            margin-top: 0;
+            color: #e0e0e0;
+            font-size: 2.5vw;
+        }
+
+        .timeline-phase p {
+            margin-bottom: 0;
+            font-size: 2.3vw;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            display: block;
+        }
+
+        .timeline-phase.active p {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 2vh 0;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+        }
+
+        footer h2 {
+            margin: 0 0 1vh;
+            font-size: 3vw;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 2.5vw;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .menu-button {
+                font-size: 1.5vh;
+            }
+
+            .dropdown-menu {
+                width: 15vw;
+            }
+
+            h1 {
+                font-size: 2.5vw;
+            }
+
+            h2, .timeline-phase h3 {
+                font-size: 2vw;
+            }
+
+            p, .timeline-phase p, footer p {
+                font-size: 1.8vw;
+            }
+
+            .timeline-phase {
+                max-height: 4vh;
+            }
+
+            footer h2 {
+                font-size: 2.2vw;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 10vh 3vw 3vh;
+            }
+
+            .menu-button {
+                font-size: 1.2vh;
+                padding: 0.8vh 1.5vw;
+            }
+
+            h1 {
+                font-size: 2vw;
+            }
+
+            h2, .timeline-phase h3 {
+                font-size: 1.8vw;
+            }
+
+            p, .timeline-phase p, footer p {
+                font-size: 1.5vw;
+            }
+
+            footer h2 {
+                font-size: 2vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="mainpage.html">Home</a>
+                <a href="survey.html">Survey</a>
+                <a href="about-foodlah.html">More Info</a>
+                <a href="global-statistics.html">Statistics</a>
+                <a href="volunteer.html">Get Involved</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Welcome to Foodlah</h1>
+        <div class="content">
+            <h2>About Foodlah</h2>
+            <p>Foodlah is dedicated to combating food insecurity by providing resources, support, and awareness to communities in need. Our mission is to ensure that everyone has access to nutritious and sufficient food.</p>
+
+            <h2>Our Initiative</h2>
+            <p>Foodlah works with local organizations, volunteers, and donors to create sustainable solutions for food distribution and education. Through various programs and initiatives, we aim to reduce hunger and promote food security on both local and global scales.</p>
+
+            <h2>How You Can Help</h2>
+            <p>Get involved by participating in our surveys, learning more about our mission, checking out the latest statistics on food insecurity, or finding ways to volunteer and donate. Every effort counts in the fight against hunger.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-phase" onclick="togglePhase(this)">
+                <h3>Phase 1: Pilot Phase</h3>
+                <p>This phase focuses on launching a small-scale pilot program in a specific area with high food insecurity. We'll partner with local organizations to distribute food and gather valuable data and feedback.</p>
+            </div>
+            <div class="timeline-phase" onclick="togglePhase(this)">
+                <h3>Phase 2: Expansion and Optimization</h3>
+                <p>In this phase, we'll expand our reach to more areas, incorporating feedback from the pilot phase. Our goal is to optimize logistics and food distribution, leveraging technology to enhance efficiency.</p>
+            </div>
+            <div class="timeline-phase" onclick="togglePhase(this)">
+                <h3>Phase 3: Full Scale Implementation</h3>
+                <p>This final phase aims at rolling out our program on a nationwide level. By building strong partnerships and continually optimizing our processes, we hope to ensure food security for all.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h2>Expected Outcomes</h2>
+        <p>Better holistic food access, reduced food waste through more targeted food aid, increased scalability, and greater community engagement.</p>
+        <p class="credit">This project was created by Youthhaxorz 2024.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById('dropdown-menu').classList.toggle('show-menu');
+        }
+
+        function togglePhase(element) {
+            element.classList.toggle('active');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

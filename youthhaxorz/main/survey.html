@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodlah - Food Consumption Score Questionnaire</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 1vh 1vw;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .menu-container {
+            position: relative;
+        }
+
+        .menu-button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: none;
+            padding: 1vh 2vw;
+            font-size: 2vh;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        .menu-button:hover {
+            background-color: #555;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            width: 20vw;
+            z-index: 1001;
+        }
+
+        .dropdown-menu a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 1vh 2vw;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        .container {
+            padding: 15vh 5vw 5vh;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #e0e0e0;
+            text-align: center;
+            font-size: 4vw;
+        }
+
+        .content {
+            margin-top: 2vh;
+        }
+
+        h2 {
+            font-size: 3vw;
+        }
+
+        p {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vh;
+        }
+
+        .form-container {
+            margin-top: 2vh;
+            background: #1e1e1e;
+            padding: 2vw;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .form-container h2 {
+            font-size: 2.5vw;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 1vh;
+            font-size: 2vw;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 1vh;
+            margin-bottom: 2vh;
+            border-radius: 4px;
+            border: 1px solid #333;
+            background: #121212;
+            color: #e0e0e0;
+            font-size: 2vw;
+        }
+
+        .form-container button {
+            background-color: #333;
+            color: #e0e0e0;
+            border: none;
+            padding: 1vh 2vw;
+            font-size: 2vw;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #555;
+        }
+
+        .results {
+            margin-top: 2vh;
+            padding: 2vw;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .results h3 {
+            font-size: 2.5vw;
+        }
+
+        .results p {
+            font-size: 2vw;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 2vh 0;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+        }
+
+        footer h2 {
+            margin: 0 0 1vh;
+            font-size: 3vw;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 2.5vw;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .menu-button {
+                font-size: 1.5vh;
+            }
+
+            .dropdown-menu {
+                width: 15vw;
+            }
+
+            h1 {
+                font-size: 2.5vw;
+            }
+
+            h2, .timeline-phase h3 {
+                font-size: 2vw;
+            }
+
+            p, .timeline-phase p, footer p {
+                font-size: 1.8vw;
+            }
+
+            .timeline-phase {
+                max-height: 4vh;
+            }
+
+            footer h2 {
+                font-size: 2.2vw;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 10vh 3vw 3vh;
+            }
+
+            .menu-button {
+                font-size: 1.2vh;
+                padding: 0.8vh 1.5vw;
+            }
+
+            h1 {
+                font-size: 2vw;
+            }
+
+            h2, .timeline-phase h3 {
+                font-size: 1.8vw;
+            }
+
+            p, .timeline-phase p, footer p {
+                font-size: 1.5vw;
+            }
+
+            footer h2 {
+                font-size: 2vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="mainpage.html">Home</a>
+                <a href="survey.html">Survey</a>
+                <a href="about-foodlah.html">More Info</a>
+                <a href="singapore-statistics.html">Statistics</a>
+                <a href="volunteer.html">Get Involved</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Food Consumption Score Questionnaire</h1>
+        <div class="form-container">
+            <h2>Food Consumption Score (FCS) Questionnaire</h2>
+            <form id="fcs-form">
+                <label for="cereals">Cereals and Grains (days per week):</label>
+                <input type="number" id="cereals" name="cereals" min="0" max="7" required>
+
+                <label for="vegetables">Vegetables (days per week):</label>
+                <input type="number" id="vegetables" name="vegetables" min="0" max="7" required>
+
+                <label for="fruits">Fruits (days per week):</label>
+                <input type="number" id="fruits" name="fruits" min="0" max="7" required>
+
+                <label for="meat">Meat and Fish (days per week):</label>
+                <input type="number" id="meat" name="meat" min="0" max="7" required>
+
+                <label for="dairy">Dairy Products (days per week):</label>
+                <input type="number" id="dairy" name="dairy" min="0" max="7" required>
+
+                <label for="legumes">Legumes and Nuts (days per week):</label>
+                <input type="number" id="legumes" name="legumes" min="0" max="7" required>
+
+                <button type="button" onclick="calculateFCS()">Submit</button>
+            </form>
+        </div>
+
+        <div id="results" class="results" style="display:none;">
+            <h3>Your Food Consumption Score</h3>
+            <p id="fcs-score">FCS Score: </p>
+            <p id="fcs-info">FCS Info: </p>
+        </div>
+    </div>
+    <footer>
+        <h2>Get Involved Today</h2>
+        <p>Join us in our mission to create a world where everyone has access to nutritious food. Your contribution can help us make a real difference.</p>
+        <p class="credit">This project is powered by dedicated individuals and organizations, including Youthhaxorz 2024.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById('dropdown-menu').classList.toggle('show-menu');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+
+        function calculateFCS() {
+            var cereals = parseInt(document.getElementById('cereals').value);
+            var vegetables = parseInt(document.getElementById('vegetables').value);
+            var fruits = parseInt(document.getElementById('fruits').value);
+            var meat = parseInt(document.getElementById('meat').value);
+            var dairy = parseInt(document.getElementById('dairy').value);
+            var legumes = parseInt(document.getElementById('legumes').value);
+
+            var score = cereals * 2 + vegetables * 3 + fruits * 4 + meat * 5 + dairy * 3 + legumes * 2; // Simplified scoring
+
+            document.getElementById('fcs-score').innerText = 'FCS Score: ' + score;
+
+            var info = '';
+            if (score < 20) {
+                info = 'Low Food Consumption Score: This suggests limited diversity in diet, which may indicate food insecurity.';
+            } else if (score < 40) {
+                info = 'Moderate Food Consumption Score: Indicates a somewhat diversified diet but still at risk of food insecurity.';
+            } else {
+                info = 'High Food Consumption Score: Suggests a diverse diet, likely indicating less food insecurity.';
+            }
+            document.getElementById('fcs-info').innerText = 'FCS Info: ' + info;
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
