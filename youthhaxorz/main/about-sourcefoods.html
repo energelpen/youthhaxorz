@@ -10,21 +10,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #f9f9f9; /* Changed to light background */
+            color: #333; /* Changed to dark text color */
             line-height: 1.6;
         }
 
         header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
+            background-color: #ffffff; /* Light background for header */
+            color: #333; /* Dark text color */
             padding: 1vh 1vw;
             text-align: center;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -35,8 +35,8 @@
         }
 
         .menu-button {
-            background-color: #333;
-            color: #e0e0e0;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark text color */
             border: none;
             padding: 1vh 2vw;
             font-size: 2vh;
@@ -48,7 +48,7 @@
         }
 
         .menu-button:hover {
-            background-color: #555;
+            background-color: #e0e0e0; /* Slightly darker gray on hover */
         }
 
         .dropdown-menu {
@@ -56,15 +56,15 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #1f1f1f;
+            background-color: #ffffff; /* White background for menu */
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
             width: 20vw;
             z-index: 1001;
         }
 
         .dropdown-menu a {
-            color: #e0e0e0;
+            color: #333; /* Dark text color */
             text-decoration: none;
             padding: 1vh 2vw;
             display: block;
@@ -72,8 +72,8 @@
         }
 
         .dropdown-menu a:hover {
-            background-color: #333;
-            color: #ffffff;
+            background-color: #f0f0f0; /* Light gray on hover */
+            color: #000; /* Black text color on hover */
         }
 
         .show-menu {
@@ -87,7 +87,7 @@
         }
 
         h1 {
-            color: #e0e0e0;
+            color: #333; /* Dark text color */
             text-align: center;
             font-size: 4vw;
         }
@@ -98,19 +98,21 @@
 
         h2 {
             font-size: 3vw;
+            color: #444; /* Darker text for headings */
         }
 
         p {
             font-size: 2.5vw;
             margin-bottom: 1.5vh;
+            color: #555; /* Standard paragraph text color */
         }
 
         footer {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
+            background-color: #ffffff; /* Light background for footer */
+            color: #333; /* Dark text color */
             padding: 2vh 0;
             text-align: center;
-            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
         }
 
         footer h2 {
@@ -186,14 +188,13 @@
                 <a href="mainpage.html">Home</a>
                 <a href="survey.html">Survey</a>
                 <a href="about-sourcefoods.html">About Us</a>
-                <a href="global-statistics.html">Statistics</a>
-                <a href="volunteer.html">Get Involved</a>
+                <a href="leaderboard.html">Volunteers Leaderboard</a>
                 <a href="login.html">Login</a>
             </div>
         </div>
     </header>
     <div class="container">
-        <h1>About sourcefoods</h1>
+        <h1>About SourceFoods</h1>
         <div class="content">
             <h2>Our Mission</h2>
             <p>SourceFoods was created during the YouthxHack hackathon with a mission to tackle food insecurity through innovative solutions. We aim to connect food sources with those in need while minimizing waste, using a blend of technology, data analytics, and community engagement.</p>

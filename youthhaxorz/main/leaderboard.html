@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SourceFoods - Combating Food Insecurity</title>
+    <title>SourceFoods - Volunteer Leaderboard</title>
     <style>
         /* Global Styles */
         body {
@@ -102,55 +102,28 @@
         h2 {
             font-size: 3vw;
             color: #333333;  /* Dark text color */
+            text-align: center;
         }
 
-        p {
-            font-size: 2.5vw;
-            margin-bottom: 1.5vh;
-            color: #333333;  /* Dark text color */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2vh 0;
         }
 
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 2vh;
-            margin: 4vh 0;
-        }
-
-        .timeline-phase {
-            background: #f9f9f9;  /* Light background */
-            border: 1px solid #dddddd;  /* Light border */
-            border-radius: 8px;
+        th, td {
             padding: 1vh 2vw;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Light shadow */
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-            max-height: 6vh;
-            position: relative;
-            cursor: pointer;
+            text-align: left;
+            border-bottom: 1px solid #dddddd;  /* Light border */
         }
 
-        .timeline-phase.active {
-            max-height: 20vh;
-            padding: 2vh 2vw;
-        }
-
-        .timeline-phase h3 {
-            margin-top: 0;
+        th {
+            background-color: #f4f4f4;  /* Light grey background for header */
             color: #333333;  /* Dark text color */
-            font-size: 2.5vw;
         }
 
-        .timeline-phase p {
-            margin-bottom: 0;
-            font-size: 2.3vw;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-            display: block;
-        }
-
-        .timeline-phase.active p {
-            opacity: 1;
+        tr:hover {
+            background-color: #f9f9f9;  /* Light background on hover */
         }
 
         footer {
@@ -185,20 +158,12 @@
                 font-size: 2.5vw;
             }
 
-            h2, .timeline-phase h3 {
+            h2 {
                 font-size: 2vw;
             }
 
-            p, .timeline-phase p, footer p {
-                font-size: 1.8vw;
-            }
-
-            .timeline-phase {
-                max-height: 4vh;
-            }
-
-            footer h2 {
-                font-size: 2.2vw;
+            th, td {
+                padding: 0.8vh 1.5vw;
             }
         }
 
@@ -216,16 +181,12 @@
                 font-size: 2vw;
             }
 
-            h2, .timeline-phase h3 {
+            h2 {
                 font-size: 1.8vw;
             }
 
-            p, .timeline-phase p, footer p {
-                font-size: 1.5vw;
-            }
-
-            footer h2 {
-                font-size: 2vw;
+            th, td {
+                padding: 0.6vh 1.2vw;
             }
         }
     </style>
@@ -239,50 +200,63 @@
                 <a href="survey.html">Survey</a>
                 <a href="about-SourceFoods.html">More Info</a>
                 <a href="leaderboard.html">Volunteering Leaderboard</a>
-
                 <a href="login.html">Login</a>
             </div>
         </div>
     </header>
     <div class="container">
-        <h1>Welcome to SourceFoods</h1>
+        <h1>Volunteer Leaderboard</h1>
         <div class="content">
-            <h2>About SourceFoods</h2>
-            <p>SourceFoods is dedicated to combating food insecurity by providing resources, support, and awareness to communities in need. Our mission is to ensure that everyone has access to nutritious and sufficient food.</p>
+            <h2>Top Volunteers</h2>
+            <p>We are incredibly grateful for the dedication and hard work of our volunteers. Their efforts make a huge difference in our fight against food insecurity. Here are the top volunteers who have gone above and beyond to help deliver essential resources to those in need. Keep up the amazing work!</p>
 
-            <h2>Our Initiative</h2>
-            <p>SourceFoods works with local organizations, volunteers, and donors to create sustainable solutions for food distribution and education. Through various programs and initiatives, we aim to reduce hunger and promote food security on both local and global scales.</p>
-
-            <h2>How You Can Help</h2>
-            <p>Get involved by participating in our surveys, learning more about our mission, checking out the latest statistics on food insecurity, or finding ways to volunteer and donate. Every effort counts in the fight against hunger.</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-phase" onclick="togglePhase(this)">
-                <h3>Phase 1: Pilot Phase</h3>
-                <p>This phase focuses on launching a small-scale pilot program in a specific area with high food insecurity. We'll partner with local organizations to distribute food and gather valuable data and feedback.</p>
-            </div>
-            <div class="timeline-phase" onclick="togglePhase(this)">
-                <h3>Phase 2: Expansion and Optimization</h3>
-                <p>In this phase, we'll expand our reach to more areas, incorporating feedback from the pilot phase. Our goal is to optimize logistics and food distribution, leveraging technology to enhance efficiency.</p>
-            </div>
-            <div class="timeline-phase" onclick="togglePhase(this)">
-                <h3>Phase 3: Full Scale Implementation</h3>
-                <p>This final phase aims at rolling out our program on a nationwide level. By building strong partnerships and continually optimizing our processes, we hope to ensure food security for all.</p>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Alex Soh</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jamie Lee</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Jordan Lee</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Raju Singh</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>John Tan</td>
+                        <td>85</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Every volunteer's contribution is invaluable. If you’re not on the leaderboard yet, don’t be discouraged – every effort helps us reach our goals and make a positive impact. Thank you for your commitment and support!</p>
         </div>
     </div>
     <footer>
-        <h2>Expected Outcomes</h2>
-        <p>Better holistic food access, reduced food waste through more targeted food aid, increased scalability, and greater community engagement.</p>
+        <h2>Join the Fight Against Food Insecurity</h2>
+        <p>Be part of the solution! Volunteer with us today to make a meaningful difference in your community.</p>
         <p class="credit">This project was created by Youthhaxorz 2024.</p>
     </footer>
     <script>
         function toggleMenu() {
             document.getElementById('dropdown-menu').classList.toggle('show-menu');
-        }
-
-        function togglePhase(element) {
-            element.classList.toggle('active');
         }
 
         window.onclick = function(event) {

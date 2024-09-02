@@ -10,21 +10,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text for high contrast */
             line-height: 1.6;
         }
 
         header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
+            background-color: #f8f8f8; /* Light grey background for header */
+            color: #000000; /* Black text */
             padding: 1vh 1vw;
             text-align: center;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -35,8 +35,8 @@
         }
 
         .menu-button {
-            background-color: #333;
-            color: #e0e0e0;
+            background-color: #cccccc; /* Light grey for buttons */
+            color: #000000; /* Black text */
             border: none;
             padding: 1vh 2vw;
             font-size: 2vh;
@@ -48,7 +48,7 @@
         }
 
         .menu-button:hover {
-            background-color: #555;
+            background-color: #999999; /* Darker grey on hover */
         }
 
         .dropdown-menu {
@@ -56,15 +56,15 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #1f1f1f;
+            background-color: #f8f8f8; /* Light grey dropdown background */
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 20vw;
             z-index: 1001;
         }
 
         .dropdown-menu a {
-            color: #e0e0e0;
+            color: #000000; /* Black text */
             text-decoration: none;
             padding: 1vh 2vw;
             display: block;
@@ -72,8 +72,8 @@
         }
 
         .dropdown-menu a:hover {
-            background-color: #333;
-            color: #ffffff;
+            background-color: #cccccc; /* Light grey background on hover */
+            color: #000000; /* Black text on hover */
         }
 
         .show-menu {
@@ -87,7 +87,7 @@
         }
 
         h1 {
-            color: #e0e0e0;
+            color: #000000; /* Black text for headings */
             text-align: center;
             font-size: 4vw;
         }
@@ -107,10 +107,10 @@
 
         .form-container {
             margin-top: 2vh;
-            background: #1e1e1e;
+            background: #f0f0f0; /* Light grey form background */
             padding: 2vw;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .form-container h2 {
@@ -128,15 +128,15 @@
             padding: 1vh;
             margin-bottom: 2vh;
             border-radius: 4px;
-            border: 1px solid #333;
-            background: #121212;
-            color: #e0e0e0;
+            border: 1px solid #cccccc; /* Light grey border */
+            background: #ffffff; /* White input background */
+            color: #000000; /* Black text */
             font-size: 2vw;
         }
 
         .form-container button {
-            background-color: #333;
-            color: #e0e0e0;
+            background-color: #cccccc; /* Light grey button */
+            color: #000000; /* Black text */
             border: none;
             padding: 1vh 2vw;
             font-size: 2vw;
@@ -147,15 +147,15 @@
         }
 
         .form-container button:hover {
-            background-color: #555;
+            background-color: #999999; /* Darker grey on hover */
         }
 
         .results {
             margin-top: 2vh;
             padding: 2vw;
-            background: #1e1e1e;
+            background: #f0f0f0; /* Light grey background for results */
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .results h3 {
@@ -166,12 +166,18 @@
             font-size: 2vw;
         }
 
+        .error-message {
+            color: #ff4d4d; /* Red for error messages */
+            font-size: 2vw;
+            margin-top: 1vh;
+        }
+
         footer {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
+            background-color: #f8f8f8; /* Light grey footer */
+            color: #000000; /* Black text */
             padding: 2vh 0;
             text-align: center;
-            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         footer h2 {
@@ -251,8 +257,8 @@
                 <a href="mainpage.html">Home</a>
                 <a href="survey.html">Survey</a>
                 <a href="about-SourceFoods.html">More Info</a>
-                <a href="singapore-statistics.html">Statistics</a>
-                <a href="volunteer.html">Get Involved</a>
+                <a href="leaderboard.html">Volunteering Leaderboard</a>
+
                 <a href="login.html">Login</a>
             </div>
         </div>
@@ -271,7 +277,7 @@
                 <label for="fruits">Fruits (days per week):</label>
                 <input type="number" id="fruits" name="fruits" min="0" max="7" required>
 
-                <label for="meat">Meat and Fish (days per week):</label>
+                <label for="meat">Meat, Fish, and Eggs (days per week):</label>
                 <input type="number" id="meat" name="meat" min="0" max="7" required>
 
                 <label for="dairy">Dairy Products (days per week):</label>
@@ -279,6 +285,8 @@
 
                 <label for="legumes">Legumes and Nuts (days per week):</label>
                 <input type="number" id="legumes" name="legumes" min="0" max="7" required>
+
+                <p id="error-message" class="error-message" style="display: none;"></p>
 
                 <button type="button" onclick="calculateFCS()">Submit</button>
             </form>
@@ -319,6 +327,16 @@
             var meat = parseInt(document.getElementById('meat').value);
             var dairy = parseInt(document.getElementById('dairy').value);
             var legumes = parseInt(document.getElementById('legumes').value);
+
+            // Check if any input exceeds 7 days
+            if (cereals > 7 || vegetables > 7 || fruits > 7 || meat > 7 || dairy > 7 || legumes > 7) {
+                document.getElementById('error-message').innerText = 'Error: The number of days for any food group cannot exceed 7. Please enter a valid value.';
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('results').style.display = 'none';
+                return;
+            } else {
+                document.getElementById('error-message').style.display = 'none';
+            }
 
             var score = cereals * 2 + vegetables * 3 + fruits * 4 + meat * 5 + dairy * 3 + legumes * 2; // Simplified scoring
 

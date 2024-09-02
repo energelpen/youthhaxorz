@@ -76,6 +76,22 @@
             background-color: #0056b3;
         }
 
+        .back-button {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #6c757d;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+
         @media (max-width: 600px) {
             .login-container {
                 width: 95%;
@@ -90,7 +106,7 @@
                 font-size: 0.9rem;
             }
 
-            .role-buttons button {
+            .role-buttons button, .back-button {
                 font-size: 1rem;
                 padding: 0.6rem;
             }
@@ -111,6 +127,8 @@
             <button onclick="setRole('recipient')">Login as Recipient</button>
             <button onclick="redirectToVolunteer()">Login as Volunteer</button>
         </div>
+
+        <button class="back-button" onclick="goToHomePage()">Back to Home Page</button>
     </div>
 
     <script>
@@ -126,6 +144,10 @@
 
         function redirectToVolunteer() {
             window.location.href = 'map.html'; // Replace with your actual Volunteer page URL
+        }
+
+        function goToHomePage() {
+            window.location.href = 'mainpage.html'; // Replace with your actual Home page URL
         }
     </script>
 </body>
