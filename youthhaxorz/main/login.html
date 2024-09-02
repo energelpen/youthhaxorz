@@ -10,27 +10,28 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #f0f0f0;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: linear-gradient(to right, #1f1f1f, #333);
+            background-image: linear-gradient(to right, #ffffff, #e0e0e0);
         }
 
         .login-container {
-            background-color: #1e1e1e;
+            background-color: #ffffff;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             max-width: 400px;
-            width: 100%;
+            width: 90%; /* Ensure responsiveness */
             text-align: center;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
         h1 {
-            color: #e0e0e0;
+            color: #333;
             margin-bottom: 1rem;
         }
 
@@ -38,41 +39,61 @@
             display: block;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
-            color: #e0e0e0;
+            color: #333;
         }
 
         input {
             width: 100%;
             padding: 0.8rem;
             margin-bottom: 1rem;
-            border: 1px solid #333;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #333;
-            color: #e0e0e0;
+            background-color: #f9f9f9;
+            color: #333;
             font-size: 1rem;
+            box-sizing: border-box;
         }
 
         .role-buttons {
             margin-top: 1rem;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .role-buttons button {
-            flex: 1;
-            margin: 0 0.5rem;
             padding: 0.8rem;
             border: none;
             border-radius: 5px;
-            background-color: #555;
-            color: #e0e0e0;
+            background-color: #007bff;
+            color: #ffffff;
             font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .role-buttons button:hover {
-            background-color: #777;
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            input {
+                font-size: 0.9rem;
+            }
+
+            .role-buttons button {
+                font-size: 1rem;
+                padding: 0.6rem;
+            }
         }
     </style>
 </head>
@@ -88,20 +109,23 @@
         <div class="role-buttons">
             <button onclick="setRole('provider')">Login as Food-Aid Provider</button>
             <button onclick="setRole('recipient')">Login as Recipient</button>
+            <button onclick="redirectToVolunteer()">Login as Volunteer</button>
         </div>
     </div>
 
     <script>
         function setRole(role) {
-            // You can set the URLs for your specific pages here
             let url = '';
             if (role === 'provider') {
                 url = 'food-aid-provider.html'; // Replace with your actual Food-Aid Provider page URL
             } else if (role === 'recipient') {
                 url = 'recipient.html'; // Replace with your actual Recipient page URL
             }
-            // Redirect to the selected role's page
             window.location.href = url;
+        }
+
+        function redirectToVolunteer() {
+            window.location.href = 'map.html'; // Replace with your actual Volunteer page URL
         }
     </script>
 </body>

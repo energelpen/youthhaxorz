@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Interface</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .info-box h3 {
+            margin: 0 0 10px;
+            color: #555;
+        }
+        .info-box p {
+            margin: 5px 0;
+        }
+        .info-box button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .info-box button:hover {
+            background-color: #45a049;
+        }
+        .logout-button {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .logout-button button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+        }
+        .logout-button button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Volunteer Interface</h1>
+    <div class="container">
+        <div class="logout-button">
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div id="map"></div>
+        <div id="info-container"></div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([1.3521, 103.8198], 12); // Singapore's coordinates
+
+        // Add a tile layer to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Locations Data
+        const locations = [
+            { name: "Chinatown Complex Food Centre", lat: 1.2839, lng: 103.8421, address: "335 Smith Street, Singapore", foodItem: "Chicken Rice", deliveryTime: "30 minutes", expiresIn: "2 hours" },
+            { name: "Maxwell Food Centre", lat: 1.2809, lng: 103.8442, address: "1 Kadayanallur Street, Singapore", foodItem: "Laksa", deliveryTime: "25 minutes", expiresIn: "1 hour 45 minutes" },
+            { name: "Old Airport Road Food Centre", lat: 1.3081, lng: 103.8851, address: "51 Old Airport Road, Singapore", foodItem: "Char Kway Teow", deliveryTime: "20 minutes", expiresIn: "1 hour 30 minutes" },
+            { name: "Tiong Bahru Market", lat: 1.2859, lng: 103.8325, address: "30 Seng Poh Road, Singapore", foodItem: "Hainanese Chicken", deliveryTime: "15 minutes", expiresIn: "1 hour 15 minutes" },
+            { name: "Lau Pa Sat", lat: 1.2803, lng: 103.8492, address: "18 Raffles Quay, Singapore", foodItem: "Satay", deliveryTime: "35 minutes", expiresIn: "2 hours 10 minutes" },
+            { name: "Tekka Centre", lat: 1.3068, lng: 103.8521, address: "665 Buffalo Road, Singapore", foodItem: "Roti Prata", deliveryTime: "40 minutes", expiresIn: "2 hours 5 minutes" },
+            { name: "Amoy Street Food Centre", lat: 1.2805, lng: 103.8475, address: "7 Amoy Street, Singapore", foodItem: "Nasi Lemak", deliveryTime: "30 minutes", expiresIn: "1 hour 50 minutes" },
+            { name: "Ghim Moh Market & Food Centre", lat: 1.3096, lng: 103.7871, address: "20 Ghim Moh Road, Singapore", foodItem: "Bak Chor Mee", deliveryTime: "50 minutes", expiresIn: "2 hours 30 minutes" },
+            { name: "Newton Food Centre", lat: 1.3111, lng: 103.8391, address: "500 Clemenceau Avenue North, Singapore", foodItem: "BBQ Stingray", deliveryTime: "45 minutes", expiresIn: "2 hours" },
+            { name: "Adam Road Food Centre", lat: 1.3254, lng: 103.8145, address: "2 Adam Road, Singapore", foodItem: "Mee Rebus", deliveryTime: "55 minutes", expiresIn: "2 hours 20 minutes" },
+            // Additional shopping marts/supermarkets
+            { name: "FairPrice Xtra", lat: 1.3072, lng: 103.8497, address: "1 Joo Koon Circle, Singapore", foodItem: "Groceries", deliveryTime: "1 hour", expiresIn: "3 hours" },
+            { name: "Cold Storage", lat: 1.3151, lng: 103.8184, address: "20 Raffles Place, Singapore", foodItem: "Fresh Produce", deliveryTime: "1.5 hours", expiresIn: "3 hours 15 minutes" }
+        ];
+
+        // Add markers and info boxes for locations
+        locations.forEach(location => {
+            // Add marker to the map
+            L.marker([location.lat, location.lng])
+                .addTo(map)
+                .bindPopup(`<b>${location.name}</b>`)
+                .openPopup();
+
+            // Create info box content
+            const infoBox = document.createElement('div');
+            infoBox.className = 'info-box';
+            infoBox.innerHTML = `
+                <h3>${location.name}</h3>
+                <p><strong>Address:</strong> ${location.address}</p>
+                <p><strong>Food Item:</strong> ${location.foodItem}</p>
+                <p><strong>Delivery Time:</strong> ${location.deliveryTime}</p>
+                <p><strong>Expires In:</strong> ${location.expiresIn}</p>
+                <button onclick="acceptOrder('${location.name}')">Accept Order</button>
+            `;
+
+            // Append info box to the container
+            document.getElementById('info-container').appendChild(infoBox);
+        });
+
+        // Function to handle order acceptance
+        function acceptOrder(locationName) {
+            alert(`Order accepted from ${locationName}`);
+        }
+
+        // Function to handle logout
+        function logout() {
+            window.location.href = 'login.html'; // Replace with your actual login page URL
+        }
+    </script>
+</body>
+</html>

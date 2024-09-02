@@ -1,99 +1,105 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FoodLah Registration</title>
-<style>
-    h2 {
-        color: #ffcc00;
-        font-size: 35px;
-        font-family: sans-serif;
-        padding-left: 530px;
-    }
-    body {
-        background-color: #121212;
-    }
-    .question {
-        margin-top: 5px;
-        margin-bottom: 20px;
-    }
-    #others {
-        margin-bottom: 10px;
-    }
-    #gluten {
-        margin-bottom: 10px;
-    }
-    .form {
-        color: #e0e0e0;
-        font-size: 15px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding-left: 410px;
-    }
-    #title {
-        font-weight: bold;
-    }
-    option {
-        font-size: 15px;
-    }
-    select {
-        width: 720px;
-        font-size: 15px;
-        padding: 5px;
-    }
-    #submit_button {
-        font-size: 20px;
-        padding: 10px 25px;
-        border-radius: 10px;
-        margin-left: 120px;
-        margin-top: 10px;
-        margin-bottom: 30px;
-        background-color: #ffcc00;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLah Registration</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2 {
+            color: #ffcc00;
+            font-size: 35px;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form {
+            color: #333;
+            font-size: 15px;
+            padding: 20px;
+            margin: 0 auto;
+            width: 60%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #title {
+            font-weight: bold;
+        }
+        option {
+            font-size: 15px;
+        }
+        select, textarea {
+            width: 100%;
+            font-size: 15px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        #submit_button {
+            font-size: 20px;
+            padding: 10px 25px;
+            border-radius: 5px;
+            background-color: #ffcc00;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     
-<h2 class="banner">Recipient Registration Form</h2>
+    <h2 class="banner">Recipient Registration Form</h2>
 
-<form method="post" class="form">
-    <label for="name" id="title">Name:</label><br>
-    <textarea id="name" name="name" class="question" rows="1" cols="95"></textarea><br>
-    
-    <label for="age" id="title">Age:</label><br>
-    <select id="age" class="question" name="age" required>
-        <option value="youth">Youth</option>
-        <option value="middle_aged">Middle-aged</option>
-        <option value="elderly">Elderly</option>
-    </select><br>
-    
-    <label for="dietary_restrictions" id="title">Dietary Restrictions:</label><br>
+    <form method="post" class="form" id="registrationForm">
+        <label for="name" id="title">Name:</label><br>
+        <textarea id="name" name="name" class="question" rows="1" cols="95"></textarea><br>
+        
+        <label for="age" id="title">Age:</label><br>
+        <select id="age" class="question" name="age" required>
+            <option value="youth">Youth</option>
+            <option value="middle_aged">Middle-aged</option>
+            <option value="elderly">Elderly</option>
+        </select><br>
+        
+        <label for="dietary_restrictions" id="title">Dietary Restrictions:</label><br>
         <input type="checkbox" id="none" name="dietary_restrictions" value="none">
         <label for="none">None</label><br>
-    
+        
         <input type="checkbox" id="beef_restriction" name="dietary_restrictions" value="beef_restriction">
         <label for="beef_restriction">No Beef</label><br>
-    
+        
         <input type="checkbox" id="pork_restriction" name="dietary_restrictions" value="pork_restriction">
         <label for="pork_restriction">No Pork</label><br>
-    
+        
         <input type="checkbox" id="vegetarian" name="dietary_restrictions" value="vegetarian">
         <label for="vegetarian">Vegetarian</label><br>
-    
+        
         <input type="checkbox" id="soft_foods" name="dietary_restrictions" value="soft_foods">
         <label for="soft_foods">Soft Foods only</label><br>
-    
+        
         <input type="checkbox" id="diabetic" name="dietary_restrictions" value="diabetic">
         <label for="diabetic">Diabetic (low sugar)</label><br>
-    
+        
         <input type="checkbox" id="others" name="dietary_restrictions" value="others">
         <label for="others">Others</label><br>
 
-    <label for="other_restrictions">If others, please specify:</label><br>
-    <textarea id="other_restrictions" name="other_restrictions" class="question" rows="4" cols="95"></textarea><br>
-
-    
-    <label for="allergies" id="title">Allergies:</label><br>
+        <label for="other_restrictions">If others, please specify:</label><br>
+        <textarea id="other_restrictions" name="other_restrictions" class="question" rows="4" cols="95"></textarea><br>
+        
+        <label for="allergies" id="title">Allergies:</label><br>
         <input type="checkbox" id="none" name="allergies" value="none">
         <label for="none">None</label><br>
 
@@ -123,19 +129,25 @@
 
         <input type="checkbox" id="gluten" name="allergies" value="gluten">
         <label for="gluten">Gluten</label><br>
-    
-    <label for="other_allergy">If others, please specify:</label><br>
-    <textarea id="other_allergy" name="other_allergy" class="question" rows="4" cols="95"></textarea><br>
+        
+        <label for="other_allergy">If others, please specify:</label><br>
+        <textarea id="other_allergy" name="other_allergy" class="question" rows="4" cols="95"></textarea><br>
 
-    <label for="delivery_time" id="title">Delivery Time Preference:</label><br>
-    <select id="delivery_time" class="question" name="delivery_time" required>
-        <option value="morning">Morning (8am-12pm)</option>
-        <option value="afternoon">Afternoon (1pm-6pm)</option>
-        <option value="night">Night (7pm-11pm)</option>
-    </select><br>
+        <label for="delivery_time" id="title">Delivery Time Preference:</label><br>
+        <select id="delivery_time" class="question" name="delivery_time" required>
+            <option value="morning">Morning (8am-12pm)</option>
+            <option value="afternoon">Afternoon (1pm-6pm)</option>
+            <option value="night">Night (7pm-11pm)</option>
+        </select><br>
 
-    <input type="button" value="Submit" id="submit_button">
-</form>
+        <button type="button" id="submit_button" onclick="redirectToPage()">Submit</button>
+    </form>
+
+    <script>
+        function redirectToPage() {
+            window.location.href = 'recipientpage.html';
+        }
+    </script>
 
 </body>
 </html>

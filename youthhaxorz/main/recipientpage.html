@@ -1,293 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome John - Foodlah Dashboard</title>
+    <title>Food Allocation - Foodlah Dashboard</title>
     <style>
         /* Global Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-            padding: 1vh 2vw;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            background-color: #f4f4f4;
+            color: #333;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            gap: 2vw; /* Space between header items */
-        }
-
-        .menu-container {
-            position: relative;
-        }
-
-        .user-icon {
-            background-color: #333;
-            color: #e0e0e0;
-            border: none;
-            padding: 1.5vh 2vh; /* Increased padding for a bigger button */
-            font-size: 2.5vh;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            outline: none;
-            position: relative; /* Positioning relative for better control */
-            right: 5vw; /* Positioned further from the left side */
-        }
-
-        .user-icon:hover {
-            background-color: #555;
-        }
-
-        .user-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: #1f1f1f;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            width: 20vw;
-            z-index: 1001;
-        }
-
-        .user-menu a {
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 1vh 2vw;
-            display: block;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .user-menu a:hover {
-            background-color: #333;
-            color: #ffffff;
-        }
-
-        .show-user-menu {
-            display: block;
+            justify-content: center;
+            height: 100vh;
         }
 
         .container {
-            padding: 15vh 5vw 5vh;
-            max-width: 1200px;
-            margin: auto;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
         }
 
         h1 {
-            color: #e0e0e0;
-            text-align: center;
-            font-size: 4vw;
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
-        .food-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2vw;
-            justify-content: center;
-            margin-top: 5vh;
+        .welcome-message {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
         }
 
-        .food-card {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 8px;
-            width: 20vw;
-            overflow: hidden;
-            padding: 1vh 1vw;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .food-card:hover {
-            transform: scale(1.05);
-            background-color: #2a2a2a;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-        }
-
-        .food-card img {
+        .food-image {
             width: 100%;
-            height: 15vw;
-            object-fit: cover;
-            border-bottom: 1px solid #444;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
-        .food-card h3 {
-            margin-top: 1vh;
-            color: #e0e0e0;
-            font-size: 2vw;
+        .details {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
         }
 
-        .food-card p {
-            margin-bottom: 0;
-            font-size: 1.8vw;
+        .map-container {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        /* Media Queries for Responsiveness */
-        @media (min-width: 768px) {
-            .user-menu {
-                width: 15vw;
-            }
-
-            h1 {
-                font-size: 2.5vw;
-            }
-
-            .food-card {
-                width: 18vw;
-            }
-
-            .food-card h3 {
-                font-size: 1.8vw;
-            }
-
-            .food-card p {
-                font-size: 1.6vw;
-            }
-
-            .food-card img {
-                height: 12vw;
-            }
+        .eta {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
-        @media (min-width: 1024px) {
-            .container {
-                padding: 10vh 3vw 3vh;
-            }
+        .volunteer-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
 
-            h1 {
-                font-size: 2vw;
-            }
+        .volunteer-info {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-            .food-card {
-                width: 15vw;
-            }
+        .confirm-button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
 
-            .food-card h3 {
-                font-size: 1.5vw;
-            }
+        .confirm-button:hover {
+            background-color: #218838;
+        }
 
-            .food-card p {
-                font-size: 1.4vw;
-            }
+        .logout-button {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
 
-            .food-card img {
-                height: 10vw;
-            }
+        .logout-button:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome John</h1>
-        <div class="menu-container">
-            <button class="user-icon" onclick="toggleUserMenu()">☰</button>
-            <div id="user-menu" class="user-menu">
-                <a href="#">Settings</a>
-                <a href="#">Preferences</a>
-                <a href="#">Location</a>
-                <a href="login.html">Logout</a>
-            </div>
-        </div>
-    </header>
 
     <div class="container">
-        <div class="food-cards">
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Rice & Vegetables">
-                <h3>Rice & Vegetables</h3>
-                <p>Available at: 123 Food Street</p>
-                <p>Includes: White Rice, Mixed Vegetables, and Lentils</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Chicken & Salad">
-                <h3>Chicken & Salad</h3>
-                <p>Available at: 456 Meal Avenue</p>
-                <p>Includes: Grilled Chicken, Green Salad, and Dressing</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Fish & Chips">
-                <h3>Fish & Chips</h3>
-                <p>Available at: 789 Snack Lane</p>
-                <p>Includes: Fried Fish, Potato Chips, and Lemon Wedges</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Nasi Lemak">
-                <h3>Nasi Lemak</h3>
-                <p>Available at: 1010 Hawker Center</p>
-                <p>Includes: Coconut Rice, Fried Anchovies, and Sambal</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Pasta & Meatballs">
-                <h3>Pasta & Meatballs</h3>
-                <p>Available at: 1212 Italian Street</p>
-                <p>Includes: Spaghetti, Meatballs, and Tomato Sauce</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Vegetarian Delight">
-                <h3>Vegetarian Delight</h3>
-                <p>Available at: 1313 Green Lane</p>
-                <p>Includes: Tofu, Stir-Fried Vegetables, and Brown Rice</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Seafood Platter">
-                <h3>Seafood Platter</h3>
-                <p>Available at: 1414 Ocean Drive</p>
-                <p>Includes: Prawns, Squid, and Rice</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Beef & Broccoli">
-                <h3>Beef & Broccoli</h3>
-                <p>Available at: 1515 Steak Avenue</p>
-                <p>Includes: Beef Strips, Broccoli, and Rice</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Tofu Stir-fry">
-                <h3>Tofu Stir-fry</h3>
-                <p>Available at: 1616 Vegan Street</p>
-                <p>Includes: Tofu, Mixed Vegetables, and Soy Sauce</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Fried Rice & Egg">
-                <h3>Fried Rice & Egg</h3>
-                <p>Available at: 1717 Diner Street</p>
-                <p>Includes: Fried Rice, Egg, and Peas</p>
-            </div>
+        <!-- Welcome Message -->
+        <h1>Food Allocation</h1>
+        <div class="welcome-message">Welcome back, John!</div>
+
+        <!-- Food Image -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Hainanese_Chicken_Rice.jpg" alt="Hainanese Chicken Rice" class="food-image">
+
+        <!-- Food Details -->
+        <div class="details">
+            <p>Item: Hainanese Chicken Rice</p>
+            <p>Delivery Date: 2024-09-05</p>
         </div>
+
+        <!-- Google Maps Container -->
+        <div class="map-container" id="map"></div>
+
+        <!-- Estimated Time of Arrival -->
+        <div class="eta">
+            Estimated Time of Arrival (ETA): 30 minutes
+        </div>
+
+        <!-- Volunteer Info and Logo -->
+        <img src="https://via.placeholder.com/60" alt="Volunteer Logo" class="volunteer-logo">
+        <div class="volunteer-info">
+            Delivered by: Jane Doe
+        </div>
+
+        <!-- Confirm Receipt Button -->
+        <button class="confirm-button" onclick="confirmDelivery()">Confirm Receipt</button>
+
+        <!-- Logout Button -->
+        <button class="logout-button" onclick="logout()">Logout</button>
     </div>
 
+    <!-- Load the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
     <script>
-        function toggleUserMenu() {
-            var userMenu = document.getElementById("user-menu");
-            userMenu.classList.toggle("show-user-menu");
+        function initMap() {
+            // Create a map object centered on Singapore
+            const singapore = { lat: 1.3521, lng: 103.8198 };
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: singapore
+            });
+
+            // Add a marker at Singapore
+            const marker = new google.maps.Marker({
+                position: singapore,
+                map: map
+            });
         }
 
-        window.onclick = function(event) {
-            if (!event.target.matches('.user-icon')) {
-                var dropdowns = document.getElementsByClassName("user-menu");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show-user-menu')) {
-                        openDropdown.classList.remove('show-user-menu');
-                    }
-                }
-            }
+        function confirmDelivery() {
+            alert("Thank you for confirming receipt of your meal!");
+        }
+
+        function logout() {
+            window.location.href = 'login.html';
         }
     </script>
+
 </body>
+
 </html>
