@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hawker Centres in Singapore</title>
+  <!-- Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqgZ3wAaD8ctDj_jrkh7sDTbqQfosdn_4"></script>
+  <style>
+    /* Set the size of the map */
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hawker Centres in Singapore</h1>
+  <!-- Div where the map will be displayed -->
+  <div id="map"></div>
+  
+  <script>
+    // List of main hawker centres with their coordinates
+    const hawkerCentres = [
+      { name: "Chinatown Complex Food Centre", lat: 1.2839, lng: 103.8421 },
+      { name: "Maxwell Food Centre", lat: 1.2809, lng: 103.8442 },
+      { name: "Old Airport Road Food Centre", lat: 1.3081, lng: 103.8851 },
+      { name: "Tiong Bahru Market", lat: 1.2859, lng: 103.8325 },
+      { name: "Lau Pa Sat", lat: 1.2803, lng: 103.8492 },
+      { name: "Tekka Centre", lat: 1.3068, lng: 103.8521 },
+      { name: "Amoy Street Food Centre", lat: 1.2805, lng: 103.8475 },
+      { name: "Ghim Moh Market & Food Centre", lat: 1.3096, lng: 103.7871 },
+      { name: "Newton Food Centre", lat: 1.3111, lng: 103.8391 },
+      { name: "Adam Road Food Centre", lat: 1.3254, lng: 103.8145 }
+    ];
+
+    function initMap() {
+      // Map options
+      const mapOptions = {
+        zoom: 12,
+        center: { lat: 1.3521, lng: 103.8198 } // Singapore's coordinates
+      };
+
+      // Create the map
+      const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      // Add markers for each hawker centre
+      hawkerCentres.forEach(centre => {
+        const marker = new google.maps.Marker({
+          position: { lat: centre.lat, lng: centre.lng },
+          map: map,
+          title: centre.name
+        });
+
+        // Info window for each marker
+        const infoWindow = new google.maps.InfoWindow({
+          content: `<h3>${centre.name}</h3>`
+        });
+
+        // Show info window on marker click
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+
+    // Initialize the map
+    window.onload = initMap;
+  </script>
+</body>
+</html>
