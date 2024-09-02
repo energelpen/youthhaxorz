@@ -1,293 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome John - Foodlah Dashboard</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-            padding: 1vh 2vw;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2vw; /* Space between header items */
-        }
-
-        .menu-container {
-            position: relative;
-        }
-
-        .user-icon {
-            background-color: #333;
-            color: #e0e0e0;
-            border: none;
-            padding: 1.5vh 2vh; /* Increased padding for a bigger button */
-            font-size: 2.5vh;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            outline: none;
-            position: relative; /* Positioning relative for better control */
-            right: 5vw; /* Positioned further from the left side */
-        }
-
-        .user-icon:hover {
-            background-color: #555;
-        }
-
-        .user-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: #1f1f1f;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            width: 20vw;
-            z-index: 1001;
-        }
-
-        .user-menu a {
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 1vh 2vw;
-            display: block;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .user-menu a:hover {
-            background-color: #333;
-            color: #ffffff;
-        }
-
-        .show-user-menu {
-            display: block;
-        }
-
-        .container {
-            padding: 15vh 5vw 5vh;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h1 {
-            color: #e0e0e0;
-            text-align: center;
-            font-size: 4vw;
-        }
-
-        .food-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2vw;
-            justify-content: center;
-            margin-top: 5vh;
-        }
-
-        .food-card {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 8px;
-            width: 20vw;
-            overflow: hidden;
-            padding: 1vh 1vw;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .food-card:hover {
-            transform: scale(1.05);
-            background-color: #2a2a2a;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-        }
-
-        .food-card img {
-            width: 100%;
-            height: 15vw;
-            object-fit: cover;
-            border-bottom: 1px solid #444;
-        }
-
-        .food-card h3 {
-            margin-top: 1vh;
-            color: #e0e0e0;
-            font-size: 2vw;
-        }
-
-        .food-card p {
-            margin-bottom: 0;
-            font-size: 1.8vw;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (min-width: 768px) {
-            .user-menu {
-                width: 15vw;
-            }
-
-            h1 {
-                font-size: 2.5vw;
-            }
-
-            .food-card {
-                width: 18vw;
-            }
-
-            .food-card h3 {
-                font-size: 1.8vw;
-            }
-
-            .food-card p {
-                font-size: 1.6vw;
-            }
-
-            .food-card img {
-                height: 12vw;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 10vh 3vw 3vh;
-            }
-
-            h1 {
-                font-size: 2vw;
-            }
-
-            .food-card {
-                width: 15vw;
-            }
-
-            .food-card h3 {
-                font-size: 1.5vw;
-            }
-
-            .food-card p {
-                font-size: 1.4vw;
-            }
-
-            .food-card img {
-                height: 10vw;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodLah Registration</title>
+<style>
+    h2 {
+        color: #ffcc00;
+        font-size: 35px;
+        font-family: sans-serif;
+        padding-left: 530px;
+    }
+    body {
+        background-color: #121212;
+    }
+    .question {
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    #others {
+        margin-bottom: 10px;
+    }
+    #gluten {
+        margin-bottom: 10px;
+    }
+    .form {
+        color: #e0e0e0;
+        font-size: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-left: 410px;
+    }
+    #title {
+        font-weight: bold;
+    }
+    option {
+        font-size: 15px;
+    }
+    select {
+        width: 720px;
+        font-size: 15px;
+        padding: 5px;
+    }
+    #submit_button {
+        font-size: 20px;
+        padding: 10px 25px;
+        border-radius: 10px;
+        margin-left: 120px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        background-color: #ffcc00;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome John</h1>
-        <div class="menu-container">
-            <button class="user-icon" onclick="toggleUserMenu()">☰</button>
-            <div id="user-menu" class="user-menu">
-                <a href="#">Settings</a>
-                <a href="#">Preferences</a>
-                <a href="#">Location</a>
-                <a href="login.html">Logout</a>
-            </div>
-        </div>
-    </header>
+    
+<h2 class="banner">Recipient Registration Form</h2>
 
-    <div class="container">
-        <div class="food-cards">
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Rice & Vegetables">
-                <h3>Rice & Vegetables</h3>
-                <p>Available at: 123 Food Street</p>
-                <p>Includes: White Rice, Mixed Vegetables, and Lentils</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Chicken & Salad">
-                <h3>Chicken & Salad</h3>
-                <p>Available at: 456 Meal Avenue</p>
-                <p>Includes: Grilled Chicken, Green Salad, and Dressing</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Fish & Chips">
-                <h3>Fish & Chips</h3>
-                <p>Available at: 789 Snack Lane</p>
-                <p>Includes: Fried Fish, Potato Chips, and Lemon Wedges</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Nasi Lemak">
-                <h3>Nasi Lemak</h3>
-                <p>Available at: 1010 Hawker Center</p>
-                <p>Includes: Coconut Rice, Fried Anchovies, and Sambal</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Pasta & Meatballs">
-                <h3>Pasta & Meatballs</h3>
-                <p>Available at: 1212 Italian Street</p>
-                <p>Includes: Spaghetti, Meatballs, and Tomato Sauce</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Vegetarian Delight">
-                <h3>Vegetarian Delight</h3>
-                <p>Available at: 1313 Green Lane</p>
-                <p>Includes: Tofu, Stir-Fried Vegetables, and Brown Rice</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Seafood Platter">
-                <h3>Seafood Platter</h3>
-                <p>Available at: 1414 Ocean Drive</p>
-                <p>Includes: Prawns, Squid, and Rice</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Beef & Broccoli">
-                <h3>Beef & Broccoli</h3>
-                <p>Available at: 1515 Steak Avenue</p>
-                <p>Includes: Beef Strips, Broccoli, and Rice</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Tofu Stir-fry">
-                <h3>Tofu Stir-fry</h3>
-                <p>Available at: 1616 Vegan Street</p>
-                <p>Includes: Tofu, Mixed Vegetables, and Soy Sauce</p>
-            </div>
-            <div class="food-card">
-                <img src="https://via.placeholder.com/150" alt="Fried Rice & Egg">
-                <h3>Fried Rice & Egg</h3>
-                <p>Available at: 1717 Diner Street</p>
-                <p>Includes: Fried Rice, Egg, and Peas</p>
-            </div>
-        </div>
-    </div>
+<form method="post" class="form">
+    <label for="name" id="title">Name:</label><br>
+    <textarea id="name" name="name" class="question" rows="1" cols="95"></textarea><br>
+    
+    <label for="age" id="title">Age:</label><br>
+    <select id="age" class="question" name="age" required>
+        <option value="youth">Youth</option>
+        <option value="middle_aged">Middle-aged</option>
+        <option value="elderly">Elderly</option>
+    </select><br>
+    
+    <label for="dietary_restrictions" id="title">Dietary Restrictions:</label><br>
+        <input type="checkbox" id="none" name="dietary_restrictions" value="none">
+        <label for="none">None</label><br>
+    
+        <input type="checkbox" id="beef_restriction" name="dietary_restrictions" value="beef_restriction">
+        <label for="beef_restriction">No Beef</label><br>
+    
+        <input type="checkbox" id="pork_restriction" name="dietary_restrictions" value="pork_restriction">
+        <label for="pork_restriction">No Pork</label><br>
+    
+        <input type="checkbox" id="vegetarian" name="dietary_restrictions" value="vegetarian">
+        <label for="vegetarian">Vegetarian</label><br>
+    
+        <input type="checkbox" id="soft_foods" name="dietary_restrictions" value="soft_foods">
+        <label for="soft_foods">Soft Foods only</label><br>
+    
+        <input type="checkbox" id="diabetic" name="dietary_restrictions" value="diabetic">
+        <label for="diabetic">Diabetic (low sugar)</label><br>
+    
+        <input type="checkbox" id="others" name="dietary_restrictions" value="others">
+        <label for="others">Others</label><br>
 
-    <script>
-        function toggleUserMenu() {
-            var userMenu = document.getElementById("user-menu");
-            userMenu.classList.toggle("show-user-menu");
-        }
+    <label for="other_restrictions">If others, please specify:</label><br>
+    <textarea id="other_restrictions" name="other_restrictions" class="question" rows="4" cols="95"></textarea><br>
 
-        window.onclick = function(event) {
-            if (!event.target.matches('.user-icon')) {
-                var dropdowns = document.getElementsByClassName("user-menu");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show-user-menu')) {
-                        openDropdown.classList.remove('show-user-menu');
-                    }
-                }
-            }
-        }
-    </script>
+    
+    <label for="allergies" id="title">Allergies:</label><br>
+        <input type="checkbox" id="none" name="allergies" value="none">
+        <label for="none">None</label><br>
+
+        <input type="checkbox" id="peanut" name="allergies" value="peanut">
+        <label for="peanut">Peanut</label><br>
+
+        <input type="checkbox" id="tree_nut" name="allergies" value="tree_nut">
+        <label for="tree_nut">Tree Nuts (e.g. almonds, walnuts, cashews)</label><br>
+
+        <input type="checkbox" id="shellfish" name="allergies" value="shellfish">
+        <label for="shellfish">Shellfish (e.g. crustaceans, mollusks)</label><br>
+
+        <input type="checkbox" id="fish" name="allergies" value="fish">
+        <label for="fish">Fish</label><br>
+
+        <input type="checkbox" id="milk" name="allergies" value="milk">
+        <label for="milk">Milk</label><br>
+
+        <input type="checkbox" id="egg" name="allergies" value="egg">
+        <label for="egg">Egg</label><br>
+
+        <input type="checkbox" id="wheat" name="allergies" value="wheat">
+        <label for="wheat">Wheat</label><br>
+
+        <input type="checkbox" id="soy" name="allergies" value="soy">
+        <label for="soy">Soybeans</label><br>
+
+        <input type="checkbox" id="gluten" name="allergies" value="gluten">
+        <label for="gluten">Gluten</label><br>
+    
+    <label for="other_allergy">If others, please specify:</label><br>
+    <textarea id="other_allergy" name="other_allergy" class="question" rows="4" cols="95"></textarea><br>
+
+    <label for="delivery_time" id="title">Delivery Time Preference:</label><br>
+    <select id="delivery_time" class="question" name="delivery_time" required>
+        <option value="morning">Morning (8am-12pm)</option>
+        <option value="afternoon">Afternoon (1pm-6pm)</option>
+        <option value="night">Night (7pm-11pm)</option>
+    </select><br>
+
+    <input type="button" value="Submit" id="submit_button">
+</form>
+
 </body>
 </html>
