@@ -7,6 +7,11 @@
 <h4>We seek to target low-income families, old-folks homes(ageing population) and match them to food given that waste in Singapore is a very big problem.</h4>
 
 <h2 align=left>Solution</h2>
+<h3>Plan</h3>
+<h4>We will execute our plan in 3 stages</h4>
+<h4>Stage 1:</h4>
+<h4>Stage 2</h4>
+<h4>Stage 3</h4>
 <h3>Initial Data Collection</h3>
 <h4>1. Food Inventory Data
 Types of Food: Information on the types of food available for donation
