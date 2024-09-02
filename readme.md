@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Food insecurity in Singapore is a multifaceted challenge. Despite the country's prosperity, certain segments of the population struggle to access affordable, nutritious food. This issue arises from various factors, such as income inequality, rising living costs, and the increasing demand for food resources. Enhancing the resilience and efficiency of the supply chain is critical to addressing these issues. By improving the distribution of food resources, we can work towards a more equitable food system. However, implementing these changes requires careful consideration and the development of specific strategies tailored to the needs of the community.
+Food insecurity in Singapore is a challenge within the context of Total Defence. Despite the country's prosperity, certain segments of the population struggle to access affordable, nutritious food. This issue arises from various factors, such as income inequality, rising living costs, and the increasing demand for food resources. Enhancing the resilience and efficiency of the supply chain is critical to addressing these issues. By further improving the distribution of food resources, we can work towards a more equitable food system.
 
 ## Problem Statement
 
-Our research has revealed that food wastage within food-aid organizations often results from the improper distribution of donated food. Food that is given directly to recipients may not always align with their dietary requirements or preferences, leading to wastage. To address this problem, we aim to streamline the supply chain through enhanced information sharing between food-aid organizations, F&B companies with surplus food, and consumers. Our goal is to ensure that recipients of food aid receive appropriate, nutritious, and safe food tailored to their specific dietary needs.
+Our research has revealed that food wastage within food-aid organizations often results from the improper distribution of donated food. Food that is given directly to recipients may not always align with their dietary requirements or preferences, leading to wastage. To address this problem, we aim to streamline the supply chain through enhanced information sharing between food-aid organizations, F&B companies and or organisations with surplus food, and consumers. Our goal is to ensure that recipients of food aid receive appropriate, nutritious, and safe food tailored to their specific dietary needs.
 
 ## Target Audience
 
@@ -66,6 +66,7 @@ We aim to reduce food waste by collaborating with food-aid organizations, hawker
 We will utilize the Oracle Autonomous Database to automatically match available food with user profiles. An algorithm will consider factors such as distance, food type, caloric intake, and age/medical suitability to determine the most efficient food allocation. This approach ensures that individuals receive food that is suitable, safe, and nutritious.
 
 Our algorithm will also optimize location-based food distribution:
+
 - Individuals within a 1km radius of a hawker center will be notified about available food items.
 - Recipients must agree to collect the item, with options for self-pickup or delivery (for those with mobility issues).
 - Volunteers registered on our platform will be notified of delivery requests and tasked with delivering food to recipients with mobility issues.
@@ -79,4 +80,16 @@ Our algorithm will also optimize location-based food distribution:
 4. **Recipients collect food** or have it delivered by volunteers.
 5. **Database updates** are made upon confirmation of food collection.
 
-By implementing this solution, we aim to tackle food insecurity and reduce food waste simultaneously, creating a more sustainable and equitable food distribution system in Singapore.
+## Economic Defense and Total Defense
+
+The implementation of Sourcefood will play a crucial role in supporting Singapore's economic defense, a key pillar of the country's Total Defense strategy. Economic defense refers to the resilience of Singapore's economy, ensuring it can withstand crises and disruptions. By reducing food waste and improving food distribution, our platform contributes to economic sustainability and resilience in several ways:
+
+1. **Reducing Economic Burden:** By efficiently reallocating surplus food to those in need, Sourcefood helps reduce the economic strain on low-income families. This ensures that their limited financial resources can be directed towards other essential needs, thereby enhancing their economic stability.
+
+2. **Supporting Local Businesses:** Our partnerships with local hawker centers, bakeries, and supermarkets create a sustainable system where excess food is put to good use instead of going to waste. This not only supports local businesses by reducing their waste disposal costs but also helps maintain a balanced demand and supply cycle within systems.
+
+3. **Strengthening Community Bonds:** By encouraging businesses and volunteers to participate in food distribution, we can help foster a culture of mutual aid and cooperation. This community resilience is a fundamental aspect of Total Defense, ensuring that in times of crisis, such as economic downturns or natural disasters, the community can rely on its collective strength to overcome challenges.
+
+4. **Promoting Food Security:** A reliable and efficient food distribution system enhances Singapore’s overall food security. By minimizing waste and ensuring that food reaches those who need it most, we contribute to the nation's ability to sustain its population during times of economic or supply chain disruptions.
+
+Through these efforts, our solution Sourcefood not only addresses immediate needs related to food insecurity and waste but also strengthens the broader economic and social fabric of Singapore, ensuring long-term resilience and stability.
