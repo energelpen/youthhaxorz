@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hawker Centres in Singapore</title>
   <!-- Google Maps JavaScript API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqgZ3wAaD8ctDj_jrkh7sDTbqQfosdn_4"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
   <style>
     /* Set the size of the map */
     #map {
