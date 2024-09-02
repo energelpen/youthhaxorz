@@ -92,21 +92,21 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Locations Data
+        // Updated Locations Data with Singapore Heartlands
         const locations = [
-            { name: "Chinatown Complex Food Centre", lat: 1.2839, lng: 103.8421, address: "335 Smith Street, Singapore", foodItem: "Chicken Rice", deliveryTime: "30 minutes", expiresIn: "2 hours" },
-            { name: "Maxwell Food Centre", lat: 1.2809, lng: 103.8442, address: "1 Kadayanallur Street, Singapore", foodItem: "Laksa", deliveryTime: "25 minutes", expiresIn: "1 hour 45 minutes" },
-            { name: "Old Airport Road Food Centre", lat: 1.3081, lng: 103.8851, address: "51 Old Airport Road, Singapore", foodItem: "Char Kway Teow", deliveryTime: "20 minutes", expiresIn: "1 hour 30 minutes" },
-            { name: "Tiong Bahru Market", lat: 1.2859, lng: 103.8325, address: "30 Seng Poh Road, Singapore", foodItem: "Hainanese Chicken", deliveryTime: "15 minutes", expiresIn: "1 hour 15 minutes" },
-            { name: "Lau Pa Sat", lat: 1.2803, lng: 103.8492, address: "18 Raffles Quay, Singapore", foodItem: "Satay", deliveryTime: "35 minutes", expiresIn: "2 hours 10 minutes" },
-            { name: "Tekka Centre", lat: 1.3068, lng: 103.8521, address: "665 Buffalo Road, Singapore", foodItem: "Roti Prata", deliveryTime: "40 minutes", expiresIn: "2 hours 5 minutes" },
-            { name: "Amoy Street Food Centre", lat: 1.2805, lng: 103.8475, address: "7 Amoy Street, Singapore", foodItem: "Nasi Lemak", deliveryTime: "30 minutes", expiresIn: "1 hour 50 minutes" },
-            { name: "Ghim Moh Market & Food Centre", lat: 1.3096, lng: 103.7871, address: "20 Ghim Moh Road, Singapore", foodItem: "Bak Chor Mee", deliveryTime: "50 minutes", expiresIn: "2 hours 30 minutes" },
-            { name: "Newton Food Centre", lat: 1.3111, lng: 103.8391, address: "500 Clemenceau Avenue North, Singapore", foodItem: "BBQ Stingray", deliveryTime: "45 minutes", expiresIn: "2 hours" },
-            { name: "Adam Road Food Centre", lat: 1.3254, lng: 103.8145, address: "2 Adam Road, Singapore", foodItem: "Mee Rebus", deliveryTime: "55 minutes", expiresIn: "2 hours 20 minutes" },
+            { name: "Yishun Park Hawker Centre", lat: 1.4265, lng: 103.8353, address: "51 Yishun Avenue 11, Singapore", foodItem: "Chicken Rice", deliveryTime: "20 minutes", expiresIn: "2 hours" },
+            { name: "Tampines Round Market & Food Centre", lat: 1.3490, lng: 103.9448, address: "137 Tampines Street 11, Singapore", foodItem: "Laksa", deliveryTime: "30 minutes", expiresIn: "1 hour 45 minutes" },
+            { name: "Jurong West 505 Market & Food Centre", lat: 1.3521, lng: 103.7092, address: "505 Jurong West Street 52, Singapore", foodItem: "Vegetable Brown Rice Porridge", deliveryTime: "25 minutes", expiresIn: "1 hour 30 minutes" },
+            { name: "Bedok Interchange Hawker Centre", lat: 1.3248, lng: 103.9292, address: "208B New Upper Changi Road, Singapore", foodItem: "Hainanese Chicken Rice", deliveryTime: "20 minutes", expiresIn: "1 hour 15 minutes" },
+            { name: "Ang Mo Kio 628 Market & Food Centre", lat: 1.3765, lng: 103.8498, address: "628 Ang Mo Kio Avenue 4, Singapore", foodItem: "Mince Meat Rice", deliveryTime: "35 minutes", expiresIn: "2 hours 10 minutes" },
+            { name: "Clementi 448 Market & Food Centre", lat: 1.3167, lng: 103.7640, address: "448 Clementi Avenue 3, Singapore", foodItem: "Fried Rice", deliveryTime: "40 minutes", expiresIn: "2 hours 5 minutes" },
+            { name: "Serangoon Garden Market", lat: 1.3640, lng: 103.8652, address: "49A Serangoon Garden Way, Singapore", foodItem: "Chapati with Dhal", deliveryTime: "30 minutes", expiresIn: "1 hour 50 minutes" },
+            { name: "Bukit Panjang Hawker Centre & Market", lat: 1.3783, lng: 103.7633, address: "2 Bukit Panjang Ring Road, Singapore", foodItem: "Bak Chor Mee", deliveryTime: "50 minutes", expiresIn: "2 hours 30 minutes" },
+            { name: "Geylang Serai Market", lat: 1.3164, lng: 103.8978, address: "1 Geylang Serai, Singapore", foodItem: "Sliced Fish Soup with Vegetables and Rice", deliveryTime: "45 minutes", expiresIn: "2 hours" },
+            { name: "Woodlands North Plaza", lat: 1.4379, lng: 103.7865, address: "883 Woodlands Street 82, Singapore", foodItem: "Bee Hoon", deliveryTime: "55 minutes", expiresIn: "2 hours 20 minutes" },
             // Additional shopping marts/supermarkets
-            { name: "FairPrice Xtra", lat: 1.3072, lng: 103.8497, address: "1 Joo Koon Circle, Singapore", foodItem: "Groceries", deliveryTime: "1 hour", expiresIn: "3 hours" },
-            { name: "Cold Storage", lat: 1.3151, lng: 103.8184, address: "20 Raffles Place, Singapore", foodItem: "Fresh Produce", deliveryTime: "1.5 hours", expiresIn: "3 hours 15 minutes" }
+            { name: "NTUC FairPrice Yishun", lat: 1.4293, lng: 103.8354, address: "1 Northpoint Drive, Singapore", foodItem: "Groceries", deliveryTime: "1 hour", expiresIn: "3 hours" },
+            { name: "Sheng Siong Woodlands", lat: 1.4389, lng: 103.7895, address: "6A Woodlands Centre Road, Singapore", foodItem: "Fresh Produce", deliveryTime: "30 minutes", expiresIn: "3 hours 15 minutes" }
         ];
 
         // Add markers and info boxes for locations
