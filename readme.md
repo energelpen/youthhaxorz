@@ -74,7 +74,7 @@ Our algorithm will also optimize location-based food distribution:
 
 
 [![Watch our Demo](https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)](https://www.youtube.com/embed/<VIDEO_ID>)
-[<img src="https://img.youtube.com/vi/gX0vR-Yv1YU/hqdefault.jpg" width="300" height="300"
+[<img src="https://img.youtube.com/vi/gX0vR-Yv1YU/hqdefault.jpg" width="400" height="300"
 />](https://www.youtube.com/embed/gX0vR-Yv1YU)
 
 ### Integration with Oracle Products
