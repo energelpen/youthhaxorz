@@ -71,9 +71,10 @@ Our algorithm will also optimize location-based food distribution:
 - Recipients must agree to collect the item, with options for self-pickup or delivery (for those with mobility issues).
 - Volunteers registered on our platform will be notified of delivery requests and tasked with delivering food to recipients with mobility issues.
 - Recipients will confirm collection on the platform, updating the database accordingly.
-[![Watch the video](https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)](https://www.youtube.com/embed/<VIDEO_ID>)
 
-[<img src="https://img.youtube.com/vi/gX0vR-Yv1YU/hqdefault.jpg" width="600" height="300"
+
+[![Watch our Demo](https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)](https://www.youtube.com/embed/<VIDEO_ID>)
+[<img src="https://img.youtube.com/vi/gX0vR-Yv1YU/hqdefault.jpg" width="300" height="300"
 />](https://www.youtube.com/embed/gX0vR-Yv1YU)
 
 ### Integration with Oracle Products
