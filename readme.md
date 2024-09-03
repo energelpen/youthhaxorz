@@ -6,7 +6,7 @@ Food insecurity in Singapore is a challenge within the context of Total Defence.
 
 ## Problem Statement
 
-Our research has revealed that food wastage within food-aid organizations often results from the improper distribution of donated food. Food that is given directly to recipients may not always align with their dietary requirements or preferences, leading to wastage. To address this problem, we aim to streamline the supply chain through enhanced information sharing between food-aid organizations, F&B companies and or organisations with surplus food, and consumers. Our goal is to ensure that recipients of food aid receive appropriate, nutritious, and safe food tailored to their specific dietary needs.
+Our research has revealed that food wastage within food-aid organizations often results from the improper distribution of donated food. Food that is given directly to recipients may not always align with their dietary requirements or preferences, leading to wastage. To address this problem, we aim to streamline the supply chain through enhanced information sharing between food-aid organizations, F&B companies and organizations with surplus food, and consumers. Our goal is to ensure that recipients of food aid receive appropriate, nutritious, and safe food tailored to their specific dietary needs.
 
 ## Target Audience
 
@@ -72,7 +72,25 @@ Our algorithm will also optimize location-based food distribution:
 - Volunteers registered on our platform will be notified of delivery requests and tasked with delivering food to recipients with mobility issues.
 - Recipients will confirm collection on the platform, updating the database accordingly.
 
-## How It Works
+### Integration with Oracle Products
+
+To enhance the efficiency and scalability of SourceFood, we will integrate several Oracle products and technologies:
+
+1. **Oracle APEX (Application Express):** We will use Oracle APEX to build a robust, user-friendly web application interface for managing food inventory, beneficiary profiles, and matching algorithms. APEX's low-code environment will allow us to rapidly develop and iterate on our platform, incorporating feedback from users.
+
+2. **Oracle Autonomous Data Warehouse (ADW):** ADW will serve as the backbone of our data storage and management. It will handle large volumes of data efficiently, enabling quick retrieval and processing of information related to food inventory, donations, and beneficiary profiles.
+
+3. **Machine Learning:** Oracle's Machine Learning capabilities will be integrated into our platform to enhance the food matching process. We will develop predictive models to forecast food demand and optimize supply chain logistics, ensuring that food reaches those in need promptly and efficiently.
+
+4. **Oracle Analytics Cloud:** This tool will provide detailed insights into food consumption patterns, wastage rates, and operational efficiency. Dashboards and reports generated from Oracle Analytics Cloud will help us make data-driven decisions to continuously improve the platform.
+
+5. **OCI Streaming:** To manage real-time data feeds from various sources such as food suppliers, NGOs, and delivery partners, we will use OCI Streaming. This will enable us to monitor the flow of food items and respond quickly to any changes or disruptions in the supply chain.
+
+6. **NGO Database Integration:** We will connect with existing NGO databases to streamline beneficiary registration and food distribution processes. This integration will ensure that we have accurate, up-to-date information on the needs of different communities.
+
+7. **Oracle Data Integrator and GoldenGate:** These tools will facilitate seamless data integration across multiple systems, ensuring data consistency and reliability. GoldenGate will also help with real-time data synchronization between our platform and partner organizations, enhancing collaboration and coordination.
+
+### How It Works
 
 1. **Partner organizations list surplus food** on our platform.
 2. **Food items are matched** with recipients based on dietary needs and location using our algorithm.
@@ -82,14 +100,14 @@ Our algorithm will also optimize location-based food distribution:
 
 ## Economic Defense and Total Defense
 
-The implementation of Sourcefood will play a crucial role in supporting Singapore's economic defense, a key pillar of the country's Total Defense strategy. Economic defense refers to the resilience of Singapore's economy, ensuring it can withstand crises and disruptions. By reducing food waste and improving food distribution, our platform contributes to economic sustainability and resilience in several ways:
+The implementation of SourceFood will play a crucial role in supporting Singapore's economic defense, a key pillar of the country's Total Defense strategy. Economic defense refers to the resilience of Singapore's economy, ensuring it can withstand crises and disruptions. By reducing food waste and improving food distribution, our platform contributes to economic sustainability and resilience in several ways:
 
-1. **Reducing Economic Burden:** By efficiently reallocating surplus food to those in need, Sourcefood helps reduce the economic strain on low-income families. This ensures that their limited financial resources can be directed towards other essential needs, thereby enhancing their economic stability.
+1. **Reducing Economic Burden:** By efficiently reallocating surplus food to those in need, SourceFood helps reduce the economic strain on low-income families. This ensures that their limited financial resources can be directed towards other essential needs, thereby enhancing their economic stability.
 
-2. **Supporting Local Businesses:** Our partnerships with local hawker centers, bakeries, and supermarkets create a sustainable system where excess food is put to good use instead of going to waste. This not only supports local businesses by reducing their waste disposal costs but also helps maintain a balanced demand and supply cycle within systems.
+2. **Supporting Local Businesses:** Our partnerships with local hawker centers, bakeries, and supermarkets create a sustainable system where excess food is put to good use instead of going to waste. This not only supports local businesses by reducing their waste disposal costs but also helps maintain a balanced demand and supply cycle within the food ecosystem.
 
 3. **Strengthening Community Bonds:** By encouraging businesses and volunteers to participate in food distribution, we can help foster a culture of mutual aid and cooperation. This community resilience is a fundamental aspect of Total Defense, ensuring that in times of crisis, such as economic downturns or natural disasters, the community can rely on its collective strength to overcome challenges.
 
 4. **Promoting Food Security:** A reliable and efficient food distribution system enhances Singapore’s overall food security. By minimizing waste and ensuring that food reaches those who need it most, we contribute to the nation's ability to sustain its population during times of economic or supply chain disruptions.
 
-Through these efforts, our solution Sourcefood not only addresses immediate needs related to food insecurity and waste but also strengthens the broader economic and social fabric of Singapore, ensuring long-term resilience and stability.
+Through these efforts, our solution SourceFood not only addresses immediate needs related to food insecurity and waste but also strengthens the broader economic and social fabric of Singapore, ensuring long-term resilience and stability.
