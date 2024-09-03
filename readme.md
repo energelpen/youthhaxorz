@@ -86,9 +86,9 @@ To enhance the efficiency and scalability of SourceFood, we will integrate sever
 
 5. **OCI Streaming:** To manage real-time data feeds from various sources such as food suppliers, NGOs, and delivery partners, we will use OCI Streaming. This will enable us to monitor the flow of food items and respond quickly to any changes or disruptions in the supply chain.
 
-6. **NGO Database Integration:** We will connect with existing NGO databases to streamline beneficiary registration and food distribution processes. This integration will ensure that we have accurate, up-to-date information on the needs of different communities.
+6. **Oracle Data Integrator and GoldenGate:** These tools will facilitate seamless data integration across multiple systems, ensuring data consistency and reliability. GoldenGate will also help with real-time data synchronization between our platform and partner organizations, enhancing collaboration and coordination.
 
-7. **Oracle Data Integrator and GoldenGate:** These tools will facilitate seamless data integration across multiple systems, ensuring data consistency and reliability. GoldenGate will also help with real-time data synchronization between our platform and partner organizations, enhancing collaboration and coordination.
+7. **Oracle Cloud Functions:** We will use Oracle Cloud Infrastructure (OCI) Functions to create a serverless architecture for handling specific tasks within our application. OCI Functions will allow us to scale our food matching and notification services efficiently, ensuring that logic-based operations are executed promptly. This integration will also reduce infrastructure management overhead, as Functions automatically scale in response to the demand, and we will only pay for the resources we use.
 
 ### How It Works
 
