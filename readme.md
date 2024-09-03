@@ -110,4 +110,4 @@ The implementation of SourceFood will play a crucial role in supporting Singapor
 
 4. **Promoting Food Security:** A reliable and efficient food distribution system enhances Singapore’s overall food security. By minimizing waste and ensuring that food reaches those who need it most, we contribute to the nation's ability to sustain its population during times of economic or supply chain disruptions.
 
-Through these efforts, our solution SourceFood not only addresses immediate needs related to food insecurity and waste but also strengthens the broader economic and social fabric of Singapore, ensuring long-term resilience and stability.
+Through these efforts, our solution SourceFood not only addresses immediate needs related to food insecurity and waste but also strengthens the broader economic defence capabilities of Singapore, both in times of peace and crisis. 
