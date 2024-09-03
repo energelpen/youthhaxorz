@@ -13,7 +13,7 @@ Our research has revealed that food wastage within food-aid organizations often 
 Our solution primarily targets:
 
 1. **Low-income families:** To help alleviate food insecurity by providing them with access to nutritious and appropriate food.
-2. **Elderly residents in old folks' homes:** To cater to the dietary needs of the aging population, ensuring they receive suitable and safe food.
+2. **Elderly residents:** To cater to the dietary needs of the aging population, ensuring they receive suitable and safe food.
 3. **Other vulnerable groups:** Individuals and communities facing food insecurity due to various socio-economic factors.
 
 ## Solution
