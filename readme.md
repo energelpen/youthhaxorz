@@ -73,7 +73,7 @@ Our algorithm will also optimize location-based food distribution:
 - Recipients will confirm collection on the platform, updating the database accordingly.
 
 
-[![Watch our Demo](https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)](https://www.youtube.com/embed/<VIDEO_ID>)
+[![Watch our Demo](https://img.youtube.com/vi/gX0vR-Yv1YU/hqdefault.jpg)](https://www.youtube.com/embed/gX0vR-Yv1YU)
 [<img src="https://img.youtube.com/vi/gX0vR-Yv1YU/hqdefault.jpg" width="1280" height="720"
 />](https://www.youtube.com/embed/gX0vR-Yv1YU)
 
